@@ -1,0 +1,4 @@
+function calcular({minutos,taxa,bits,canais}){const valores=[minutos,taxa,bits,canais].map(Number);if(valores.some(x=>!Number.isFinite(x)||x<=0))return null;const [m,t,b,c]=valores;const bitsSegundo=t*b*c;const bytes=bitsSegundo*m*60/8;return{bytes,bitsSegundo,gb:bytes/1e9,gib:bytes/1073741824,mbMin:bitsSegundo*60/8/1e6}}
+function fmt(n,d=2){return n.toLocaleString('pt-BR',{maximumFractionDigits:d})}
+if(typeof document!=='undefined')document.querySelector('#form').addEventListener('submit',e=>{e.preventDefault();const r=calcular({minutos:duracao.value,taxa:taxa.value,bits:bits.value,canais:canais.value});if(!r)return;tamanho.textContent=`${fmt(r.gb)} GB (${fmt(r.gib)} GiB)`;bitrate.textContent=`${fmt(r.bitsSegundo/1e6)} Mb/s`;formula.textContent=`Aproximadamente ${fmt(r.mbMin)} MB por minuto, sem compressão.`});
+if(typeof module!=='undefined')module.exports={calcular,fmt};
