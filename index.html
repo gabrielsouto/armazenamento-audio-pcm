@@ -7,6 +7,10 @@
   <p class="sidebar-note">Privacidade: suas informações ficam somente neste navegador.</p>
 </aside><main id="inicio" class="page-shell">
 <header><span>CALCULADORA • ÁUDIO DIGITAL</span><h1>Quanto espaço ocupa a gravação?</h1><p>Estime o fluxo de dados PCM antes de iniciar uma sessão.</p></header>
+<figure class="project-visual">
+  <img src="assets/ilustracao-armazenamento-audio-pcm.png" alt="Ilustração editorial sobre Calculadora de Armazenamento de &#193;udio PCM" width="1536" height="1024" decoding="async">
+</figure>
+
 <section id="ferramenta" class="card"><form id="form"><label>Duração (minutos)<input id="duracao" type="number" min="0.1" step="0.1" value="60" required></label><label>Amostragem<select id="taxa"><option value="44100">44,1 kHz</option><option value="48000" selected>48 kHz</option><option value="96000">96 kHz</option><option value="192000">192 kHz</option></select></label><label>Profundidade<select id="bits"><option value="16">16 bits</option><option value="24" selected>24 bits</option><option value="32">32 bits</option></select></label><label>Canais<select id="canais"><option value="1">Mono</option><option value="2" selected>Estéreo</option><option value="6">5.1 (6 canais)</option><option value="8">7.1 (8 canais)</option></select></label><button>Calcular</button></form></section>
 <section id="resultado" class="resultado" aria-live="polite"><div><small>ARMAZENAMENTO</small><strong id="tamanho">—</strong></div><div><small>TAXA DE DADOS</small><strong id="bitrate">—</strong></div><p id="formula"></p></section>
 <aside>Estimativa do áudio PCM puro: amostras por segundo × bits por amostra × canais × duração. Cabeçalho, metadados, alinhamento, limite do contêiner e compressão podem mudar o arquivo real. GB usa base decimal; GiB usa base binária.</aside>
